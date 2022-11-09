@@ -15,7 +15,6 @@ const User = mongoose.model('User');
 const Table = mongoose.model('Table');
 
 app.get('/', function(req, res) {
-
     Table.find(function(err, titles, count) {
         console.log(titles);
         res.render( 'viewAll', {
