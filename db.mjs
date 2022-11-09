@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
-const MONGODB = "mongodb+srv://jh6651:sSriSC4GuFQeeAij@cluster0.eztdrgk.mongodb.net/?retryWrites=true&w=majority";
+const MONGODB = process.env.MONGODB;
 mongoose.connect(MONGODB, (err, database) => {
   if (err) {
 console.log(err);

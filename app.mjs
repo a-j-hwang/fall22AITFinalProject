@@ -66,7 +66,7 @@ app.get('/user/create', function(req, res) {
   res.render('userCreate');
 });
 
-const PORT =  3000;
+const PORT = process.env.PORT;
 
 app.set('view engine', 'hbs');
 app.listen(PORT);
