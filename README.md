@@ -6,7 +6,7 @@ The content below is an example project proposal / requirements document. Replac
 ## Overview
 
 Aesthetic table is essentially collages of images that is visually pleasing to a viewer.
-One can make it in according to their mood, status, or even as a tribute to fictional characters.
+One can make it in according to their mood, status, or even as a tribute to other people.
 
 This app allows user to generate 9-grid collage images by
 * auto generation through Unsplash API
