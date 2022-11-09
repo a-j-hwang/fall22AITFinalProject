@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
-mongoose.connect(process.env.MONGODB, (err, database) => {
+const MONGODB = process.env.PORT || "mongodb+srv://jh6651:sSriSC4GuFQeeAij@cluster0.eztdrgk.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(MONGODB, (err, database) => {
   if (err) {
 console.log(err);
   } else {
@@ -14,7 +15,7 @@ const User = new Schema({
 });
 
 const Table = new Schema({
-    name: String,
+    title: String,
     postedBy: User,
     link: [{body:"string"}],
     createdAt: { type: Date, default: Date.now },
