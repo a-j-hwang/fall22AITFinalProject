@@ -16,26 +16,26 @@ const Table = mongoose.model('Table');
 
 app.get('/', function(req, res) {
 
-    User.find(function(err, titles, count) {
+    Table.find(function(err, titles, count) {
         console.log(titles);
         res.render( 'viewAll', {
-      			title:titles
+      			titles:titles
       		});
 
 		});
 });
 
 app.post('/create', function(req, res) {
-	console.log(req.body.username);
-	new User({
+	console.log(req.body.title);
+	new Table({
 		title: req.body.title,
-	}).save(function(err, users, count){
+	}).save(function(err, titles, count){
 		res.redirect('/');
 	});
 
 });
 
-app.get('/user/create', function(req, res) {
+app.get('/create', function(req, res) {
   res.render('create');
 });
 
