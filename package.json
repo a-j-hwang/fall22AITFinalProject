@@ -2,7 +2,7 @@
   "name": "final-project-a-j-hwang",
   "version": "1.0.0",
   "description": "AIT final project - aesthetic tables",
-  "main": "index.js",
+  "main": "app.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
