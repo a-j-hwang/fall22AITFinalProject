@@ -42,35 +42,5 @@ app.get('/user/create', function(req, res) {
 
 
 
-/*
-
-const Cat = mongoose.model('Cat');
-
-app.get('/cats', function(req, res) {
-	Cat.find(function(err, cats, count) {
-    console.log(cats);
-		//res.render( 'cats', {
-	//		cats: cats
-	//	});
-	});
-});
-*/
-/*
-app.get('/cat/create', function(req, res) {
-  res.render('create');
-});
-
-
-
-app.post('/cat/create', function(req, res) {
-	console.log(req.body.catName);
-	new Cat({
-		name: req.body.catName,
-		updated_at : Date.now()
-	}).save(function(err, cat, count){
-		res.redirect('/cats');
-	});
-});*/
-
 app.set('view engine', 'hbs');
-app.listen(3000);
+app.listen(process.env.PORT);

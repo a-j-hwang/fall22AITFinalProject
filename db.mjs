@@ -1,6 +1,12 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
-mongoose.connect('mongodb+srv://jh6651:sSriSC4GuFQeeAij@cluster0.eztdrgk.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB, (err, database) => {
+  if (err) {
+console.log(err);
+  } else {
+console.log('Connected to database');
+  }
+});
 
 const User = new Schema({
     username:  String,
