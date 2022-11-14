@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
-const MONGODB = process.env.MONGODB;
+const MONGODB = process.env.MONGODB_URI;
 mongoose.connect(MONGODB, (err, database) => {
   if (err) {
 console.log(err);
