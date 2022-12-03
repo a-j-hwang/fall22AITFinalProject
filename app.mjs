@@ -122,11 +122,3 @@ app.get('/user/create', function(req, res) {
 });
 
 */
-
-
-
-
-const PORT = process.env.PORT;
-
-app.set('view engine', 'hbs');
-app.listen(PORT);
