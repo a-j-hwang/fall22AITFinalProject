@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-process.env.MONGODB_URI="mongodb+srv://jh6651:sSriSC4GuFQeeAij@cluster0.eztdrgk.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(process.env.MONGODB_URI, (err, database) => {
   if (err) {
