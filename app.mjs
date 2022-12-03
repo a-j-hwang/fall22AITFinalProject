@@ -41,7 +41,7 @@ app.post('/user/create', function(req, res) {
 
 
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`listening on ${port}`);
 });
