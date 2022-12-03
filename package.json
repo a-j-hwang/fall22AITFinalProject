@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nyu-csci-ua-0467-001-002-fall-2022/final-project-a-j-hwang#readme",
   "dependencies": {
+    "@vue/cli": "^5.0.8",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
     "mongoose": "^6.7.0",
