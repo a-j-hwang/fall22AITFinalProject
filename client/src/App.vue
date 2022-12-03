@@ -59,7 +59,7 @@
 </template>
 
 <script>
-const API_URL = "http://localhost:4000/messages";
+const API_URL = "https://shy-blue-blackbuck-tie.cyclic.app/";
 
 export default {
   name: "home",
