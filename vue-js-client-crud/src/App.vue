@@ -54,7 +54,7 @@
 </template>
 
 <script>
-const API_URL_TABLEDATA = process.env.APIURL;
+const API_URL_TABLEDATA = "https://shy-blue-blackbuck-tie.cyclic.app/table";
 
 export default {
   name: "app",
