@@ -20,6 +20,9 @@ const Table = new Schema({
     title: String,
     postedBy: String,
     images:[],
+    comment:[],
+    great: Number,
+    bad: Number,
     createdAt: { type: Date, default: Date.now },
 });
 

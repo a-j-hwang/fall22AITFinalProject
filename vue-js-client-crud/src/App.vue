@@ -22,7 +22,9 @@
        id="postedBy" required>
    </div>
      <button type="submit" class="btn btn-primary">Generate a random aesthetic!</button>
+
    </form>
+
 
 
 
@@ -34,7 +36,16 @@
             <h1 class="mt-0 mb-1">{{table.title}}</h1>
             <h5 class="mt-0 mb-1">{{table.postedBy}}</h5>
             <h6 class="mt-0 mb-1">{{table.createdAt}}</h6>
+            <div class="flexbox">
+            <div v-for="(image,index) in table.images" :key="index">
+                   <img  :src=image alt="img">
+            </div>
+            </div>
+                  <button @click="great(table)" class="btn btn-primary gb"><p class="mt-0 mb-1">{{table.great}}</p>  👍</button>
+                  <button @click="bad(table)" class="btn btn-primary gb"><p class="mt-0 mb-1">{{table.bad}}</p>  👎</button>
+
           </div>
+
           <br />
         </div>
       </li>
@@ -43,8 +54,7 @@
 </template>
 
 <script>
-
-const API_URL_TABLEDATA = "https://shy-blue-blackbuck-tie.cyclic.app/table";
+const API_URL_TABLEDATA = "http://localhost:4000/table";
 
 export default {
   name: "app",
@@ -53,7 +63,11 @@ export default {
     tables: [],
     table:{
       title:"",
-      postedBy:""
+      postedBy:"",
+      great:"",
+      bad:"",
+      tempcomment:"",
+      comment:[],
     }
   }),
 
@@ -67,8 +81,8 @@ export default {
 
   },
   methods: {
+
   addTable() {
-    console.log(this.table);
     fetch(API_URL_TABLEDATA, {
       method: "POST",
       body: JSON.stringify(this.table),
@@ -90,19 +104,98 @@ export default {
           this.tables.push(result);
         }
       })
-      .then(window.location.reload())
-  }
+      //.then(window.location.reload())
+  },
+
+great(table){
+fetch(API_URL_TABLEDATA+"/great", {
+  method: "POST",
+  body: JSON.stringify(table),
+  headers: {
+      "content-type": "application/json"
+    }
+})
+  .then(response => response.json())
+  .then(result => {
+    if (result.details) {
+      // there was an error...
+      const error = result.details
+        .map(detail => detail.message)
+        .join(". ");
+      this.error = error;
+    } else {
+      this.error = "";
+      this.showMessageForm = false;
+      this.tables.push(result);
+    }
+  })
+  .then(window.location.reload())
+
+},
+bad(table){
+fetch(API_URL_TABLEDATA+"/bad", {
+  method: "POST",
+  body: JSON.stringify(table),
+  headers: {
+      "content-type": "application/json"
+    }
+})
+  .then(response => response.json())
+  .then(result => {
+    if (result.details) {
+      // there was an error...
+      const error = result.details
+        .map(detail => detail.message)
+        .join(". ");
+      this.error = error;
+    } else {
+      this.error = "";
+      this.showMessageForm = false;
+      this.tables.push(result);
+    }
+  })
+  .then(window.location.reload())
+
+},
+
+
   }
 };
+
+
+
 </script>
 
 <style>
 
 body{
   text-align:center;
-  margin:300px;
+  margin:auto;
+  margin-top:300px;
+  max-width:800px;
 }
 
+img{
+width:200px;
+margin:10px;
+height:200px;
+}
+
+.flexbox{
+display: flex;
+flex-direction:row;
+align-items: center;
+justify-content: center;
+flex-wrap:wrap;
+}
+
+.gb{
+  width:100px;
+  text-align:center;
+  margin:10px;
+  margin-top:50px;
+  margin-bottom:90px;
+}
 
 form{
 text-align:left;
@@ -117,22 +210,11 @@ button{
 }
 
 
-
-.tableForm{
-  width:100px;
-  height: 100px;
-
-}
-
 #usernameForm{
   margin-top:20px;
   width:200px;
 }
 
-aesTable{
-  display: flex;
-
-}
 
 h5, h6{
   margin-left:10px;
