@@ -71,7 +71,10 @@ export default {
     console.log(this.table);
     fetch(API_URL_TABLEDATA, {
       method: "POST",
-      body: JSON.stringify(this.table)
+      body: JSON.stringify(this.table),
+      headers: {
+          "content-type": "application/json"
+        }
     })
       .then(response => response.json())
       .then(result => {
@@ -86,7 +89,8 @@ export default {
           this.showMessageForm = false;
           this.tables.push(result);
         }
-      });
+      })
+      .then(window.location.reload())
   }
   }
 };
