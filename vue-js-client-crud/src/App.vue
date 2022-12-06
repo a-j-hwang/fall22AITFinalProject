@@ -4,7 +4,7 @@
     <div class="form-element">
      <label for="title">Title</label>
      <input
-       v-model="tables.title"
+       v-model="table.title"
        type="text"
 
        class="form-control"
@@ -15,7 +15,7 @@
      <div class="form-element" id="usernameForm">
      <label for="username">Username</label>
      <input
-       v-model="tables.postedBy"
+       v-model="table.postedBy"
        type="text"
        class="form-control"
        placeholder="Enter your username"
@@ -50,7 +50,11 @@ export default {
   name: "app",
   data: () => ({
     error: "",
-    tables: []
+    tables: [],
+    table:{
+      title:"",
+      postedBy:""
+    }
   }),
 
   mounted() {
@@ -64,10 +68,10 @@ export default {
   },
   methods: {
   addTable() {
-    console.log(this.tables);
+    console.log(this.table);
     fetch(API_URL_TABLEDATA, {
       method: "POST",
-      body: JSON.stringify(this.tables)
+      body: JSON.stringify(this.table)
     })
       .then(response => response.json())
       .then(result => {
