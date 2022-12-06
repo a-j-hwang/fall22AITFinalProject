@@ -29,6 +29,7 @@
 
 
   <div>
+              <h6 style="font-size:14px"> Wait for few minute, your request will appear at bottom!</h6>
     <hr>
       <li class="media">
         <div class="media-body">
@@ -90,6 +91,7 @@ export default {
           "content-type": "application/json"
         }
     })
+
       .then(response => response.json())
       .then(result => {
         if (result.details) {
@@ -104,6 +106,9 @@ export default {
           this.tables.push(result);
         }
       })
+      .then(window.location.reload())
+
+
   },
 
 great(table){
