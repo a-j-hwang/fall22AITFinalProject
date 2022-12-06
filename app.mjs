@@ -28,10 +28,10 @@ app.get('/table', function(req, res) {
 
 app.post('/table', function(req, res) {
   console.log("postrq");
-  console.log(req.body.title);
+  console.log(req.body);
 	new Table({
-		title: req.body.title,
-    postedBy: req.body.postedBy
+		title: req.json.title,
+    postedBy: req.json.postedBy
     //generate images thru unsplash
 	}).save(function(err, users, count){
 		res.redirect('/table');
