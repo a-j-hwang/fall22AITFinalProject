@@ -54,7 +54,7 @@
 </template>
 
 <script>
-const API_URL_TABLEDATA = "https://shy-blue-blackbuck-tie.cyclic.app/table";
+const API_URL_TABLEDATA = process.env.APIURL;
 
 export default {
   name: "app",
@@ -104,7 +104,6 @@ export default {
           this.tables.push(result);
         }
       })
-      .then(window.location.reload())
   },
 
 great(table){
@@ -129,7 +128,6 @@ fetch(API_URL_TABLEDATA+"/great", {
       this.tables.push(result);
     }
   })
-  .then(window.location.reload())
 
 },
 bad(table){
@@ -154,7 +152,6 @@ fetch(API_URL_TABLEDATA+"/bad", {
       this.tables.push(result);
     }
   })
-  .then(window.location.reload())
 
 },
 
