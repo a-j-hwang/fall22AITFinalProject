@@ -6,13 +6,9 @@
 Aesthetic table is essentially collages of images that is visually pleasing to a viewer.
 One can make it in according to their mood, status, or even as a tribute to other people.
 
-This app allows user to generate 9-grid collage images by
-* auto generation through Unsplash API
-* manually uploading images
+This app allows user to generate 9-grid collage images by auto generation through Unsplash API
 
 and store it in gallery format. 
-
-Users can register and login. Once they're logged in, they can create or view their Aesthetic tables. When generating tables, they can either random-generate, or manually upload images per each spaces in the collage table.
 
 
 ## Data Model
