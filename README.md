@@ -77,19 +77,15 @@ An Example Table with Embedded Images:
 
 (__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
 
-1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the site
-3. as a user, I can view all of the tables I've created so far
+1. as a user, I can view all of the tables I've created so far
+1. as a user, I can view all of the tables other people previously created so far
 4. as a user, I can create a new table
-5. as a user, for each spaces of the table, I can either random generate the image in according to the title, or manually upload my image
-6. as a user, I can edit items of an existing aesthetic table
 
 ## Research Topics
 
-* (6 points) Next.js
-    * I'm planning to use Next.js for front-end framework, I have no prior knowledge on it. My first time in front end framework!
-* (2 pints) Tailwind.css
-    * CSS freamework
+* (6 points) vue.js
+    * I'm planning to use vue.js for front-end framework, I have no prior knowledge on it. My first time in front end framework!
+* (2 points) bootstrap css
 * (2 points) Unsplash API
     * Unsplash API will be used for random generation of images using or not using certain input fields. I have no prior knowledge, but it doesn't seem too complicated, so I assigned it 2 points. Link to following feature in API is at the bottom of the document.
 
@@ -103,4 +99,4 @@ An Example Table with Embedded Images:
 ## Annotations / References Used
 
 1. [Unsplash API random generation](https://unsplash.com/documentation#get-a-random-photo)
-2. [tutorial on Next.js](https://nextjs.org/learn/basics/create-nextjs-app)
+2. [vue js express tutorial] https://vegibit.com/vue-js-express-tutorial/
