@@ -54,7 +54,7 @@
 </template>
 
 <script>
-const API_URL_TABLEDATA = "http://localhost:4000/table";
+const API_URL_TABLEDATA = process.env.APIURL;
 
 export default {
   name: "app",
@@ -104,7 +104,7 @@ export default {
           this.tables.push(result);
         }
       })
-      //.then(window.location.reload())
+      .then(window.location.reload())
   },
 
 great(table){
