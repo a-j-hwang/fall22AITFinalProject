@@ -67,10 +67,7 @@ export default {
     console.log(this.tables);
     fetch(API_URL_TABLEDATA, {
       method: "POST",
-      body: JSON.stringify(this.tables),
-      headers: {
-        "content-type": "application/json"
-      }
+      body: JSON.stringify(this.tables)
     })
       .then(response => response.json())
       .then(result => {
