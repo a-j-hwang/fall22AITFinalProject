@@ -27,7 +27,7 @@ app.get('/table', function(req, res) {
 });
 
 app.post('/table', function(req, res) {
-	console.log(req.body);
+	console.log(req.body.title);
 	new Table({
 		title: req.body.title,
     postedBy: req.body.postedBy
