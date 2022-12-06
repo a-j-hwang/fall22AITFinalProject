@@ -19,7 +19,7 @@ const User = new Schema({
 const Table = new Schema({
     title: String,
     postedBy: String,
-    link: [{body:"string"}],
+    image1: url;
     createdAt: { type: Date, default: Date.now },
 });
 
