@@ -1,19 +1,17 @@
 <template>
   <div>
     <hr>
-    <div class="list-unstyled" v-for="user in users" :key="user._id">
       <li class="media">
         <div class="media-body">
-          <h4 class="mt-0 mb-1">{{user.username}}</h4>
-
           <div class="list-unstyled" v-for="table in tables" :key="table._id">
             <h5 class="mt-0 mb-1">{{table.title}}</h5>
+            <h5 class="mt-0 mb-1">{{table.postedBy}}</h5>
+
           </div>
           <br />
         </div>
       </li>
       <hr>
-    </div>
   </div>
 </template>
 
@@ -41,7 +39,7 @@ export default {
       .then(response => response.json())
       .then(result => {
       console.log(result);
-        this.users = result;
+        this.tables = result;
       });
 
   },

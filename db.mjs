@@ -18,7 +18,7 @@ const User = new Schema({
 
 const Table = new Schema({
     title: String,
-    postedBy: User,
+    postedBy: String,
     link: [{body:"string"}],
     createdAt: { type: Date, default: Date.now },
 });

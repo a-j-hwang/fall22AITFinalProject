@@ -43,13 +43,6 @@ app.post('/user/create', function(req, res) {
 	});
 });
 
-app.get('/api/images', function(req, res) {
-  Table.find(function(err, tables, count) {
-      console.log(tables);
-      res.json(tables);
-  });
-});
-
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
