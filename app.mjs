@@ -24,9 +24,14 @@ app.get('/user', function(req, res) {
         console.log(users);
         res.json(users);
 		});
-
 });
 
+app.get('/table', function(req, res) {
+    Table.find(function(err, tables, count) {
+        console.log(tables);
+        res.json(tables);
+		});
+});
 
 app.post('/user/create', function(req, res) {
 	console.log(req.body.username);
