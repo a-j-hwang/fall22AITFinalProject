@@ -33,7 +33,7 @@ app.post('/table', function(req, res) {
     postedBy: req.body.postedBy
     //generate images thru unsplash
 	}).save(function(err, users, count){
-		res.redirect('/user');
+		res.redirect('/table');
 	});
 });
 
